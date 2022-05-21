@@ -19,7 +19,7 @@ def getData(url):
 
 if __name__ == "__main__":
     while True:
-        notifyMe("Anil", "Lets stop the spread of this virus together")
+        # notifyMe("Anil", "Lets stop the spread of this virus together")
         myHtmlData = getData('https://www.mohfw.gov.in/')
 
         soup = BeautifulSoup(myHtmlData, 'html.parser')
@@ -35,7 +35,7 @@ if __name__ == "__main__":
             dataList = item.split('\n')
             if dataList[1] in states: 
                 nTitle = 'Cases of Covid-19'
-                nText = f"State {dataList[1]}\nIndian : {dataList[2]} & Foreign : {dataList[3]}\nCured :  {dataList[4]}\nDeaths :  {dataList[5]}"
+                nText = f"State {dataList[1]}\nIndian Nationals: {dataList[2]} \n Foreign Nationals : {dataList[3]}\nCured :  {dataList[4]}\nDeaths :  {dataList[5]}"
                 notifyMe(nTitle, nText)
                 time.sleep(2)
         time.sleep(3600)
